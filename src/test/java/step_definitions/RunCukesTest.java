@@ -7,6 +7,14 @@ import cucumber.api.junit.Cucumber;
 
 
 @RunWith(Cucumber.class)
+
+@CucumberOptions(plugin = {		
+		"junit:target/json/cucumber-results.xml",
+		"json:target/json/cucumber.json",
+		"html:target/cucumber-html-report"
+},
+features = { "classpath:features" },
+/*
 @CucumberOptions(
 		features = "classpath:features",
 		plugin = {
@@ -16,7 +24,7 @@ import cucumber.api.junit.Cucumber;
 				"usage:target/cucumber-usage.json", 
 				"junit:target/cucumber-results.xml",
 				"pretty:target/cucumber-results.html"
-		},
+		},*/
 		tags = {}
 		)
 public class RunCukesTest{
